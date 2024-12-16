@@ -3,10 +3,7 @@ pipeline {
 	tools {
 		nodejs 'NodeJS'
 	}
-	environment {
-	// 	DOCKER_HUB_CREDENTIALS_ID = 'jen-dockerhub'
-	// 	DOCKER_HUB_REPO = 'iquantc/iquant-app'
-	// }
+	
 	stages {
 		stage('Checkout Github'){
 			steps {

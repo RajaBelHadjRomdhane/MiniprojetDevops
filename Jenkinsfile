@@ -19,6 +19,13 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 				sh 'npm test'
 			}
 		}	
+        stage('Build Docker Image'){
+			steps {
+				script {
+					dockerImage = docker.build("${DOCKER_HUB_REPO}:latest")
+				}
+			}
+		}
 	
 	}
 

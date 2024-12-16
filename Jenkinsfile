@@ -12,7 +12,7 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		stage('Install node dependencies'){
 			steps {
 				sh 'npm install'
-			}
+				}
 		}
 		stage('Test Code'){
 			steps {

@@ -3,6 +3,9 @@ pipeline {
 	tools {
 		nodejs 'NodeJS'
 	}
+	environment {
+        DOCKER_HUB_REPO = "raja016/devopstp-rajabelhadjromdhane" // Replace with your actual repository name
+    }
 	
 	stages {
 		stage('Checkout Github'){

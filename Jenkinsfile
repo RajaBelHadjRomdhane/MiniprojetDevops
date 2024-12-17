@@ -24,17 +24,11 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 				// sh 'npm test'
 				// powershell 'npm test'
 		 powershell """
-                Write-Host "Working directory: $(Get-Location)"
-                Write-Host "Environment variables:"
-                Get-ChildItem Env:*
-
-                # Vérifier l'existence du fichier package.json
+                
                 Test-Path package.json
 
-                # Exécuter npm test
                 npm test
 
-                # Vérifier les fichiers de sortie
                 Test-Path ./coverage
                 """
 

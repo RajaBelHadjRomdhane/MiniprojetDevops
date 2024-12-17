@@ -11,12 +11,16 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		}		
 		stage('Install node dependencies'){
 			steps {
-				sh 'npm install'
+				// sh 'npm install'
+				powershell 'npm install'
+
 				}
 		}
 		stage('Test Code'){
 			steps {
-				sh 'npm test'
+				// sh 'npm test'
+				powershell 'npm test'
+
 			}
 		}	
         stage('Build Docker Image'){

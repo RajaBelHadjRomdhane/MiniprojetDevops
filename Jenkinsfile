@@ -18,8 +18,8 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		}
 		stage('Test Code'){
 			steps {
-				sh 'npm test'
-				// powershell 'npm test'
+				// sh 'npm test'
+				powershell 'npm test'
 
 			}
 		}	

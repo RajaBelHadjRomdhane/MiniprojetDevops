@@ -14,23 +14,13 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		}		
 		stage('Install node dependencies'){
 			steps {
-				// sh 'npm install'
 				powershell 'npm install'
 
 				}
 		}
 		stage('Test Code'){
 			steps {
-				// sh 'npm test'
-				// powershell 'npm test'
-		 powershell """
-                
-                Test-Path package.json
-
-                npm test
-
-                Test-Path ./coverage
-                """
+				powershell 'npm test'
 
 			}
 		}	

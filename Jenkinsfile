@@ -20,14 +20,16 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		}
 		stage('Test Code'){
 			steps {
+				powershell 'npm install --save-dev jest'
+
 				powershell 'npm test'
 
 			}
 		}	
-        stage('Build Docker Image'){
+        stage('Run container'){
 			steps {
 				script {
-                    dockerImage = docker.build("${env.DOCKER_HUB_REPO}:latest")
+                docker run -d --name devops-app ${env.DOCKER_HUB_REPO}:latest
 				}
 			}
 		}

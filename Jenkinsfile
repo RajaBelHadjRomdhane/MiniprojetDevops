@@ -20,11 +20,7 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		}
 		stage('Test Code'){
 			steps {
-				 powershell {
-          "npm install --save-dev jest || exit 0"
-
-          "npm test"
-        }
+				 powershell ' npm test '
 		}	
         stage('Run container'){
 			steps {

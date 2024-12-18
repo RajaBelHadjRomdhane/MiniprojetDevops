@@ -4,7 +4,7 @@ pipeline {
 		nodejs 'NodeJS'
 	}
 	environment {
-        DOCKER_HUB_REPO = "raja016/devopstp-rajabelhadjromdhane" // Replace with your actual repository name
+        DOCKER_HUB_REPO = "raja016/devopstp-rajabelhadjromdhane" 
     }
 	
 	stages {
@@ -20,11 +20,11 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 		}
 		stage('Test Code'){
 			steps {
-				powershell 'npm install --save-dev jest'
+				 powershell {
+          "npm install --save-dev jest || exit 0"
 
-				powershell 'npm test'
-
-			}
+          "npm test"
+        }
 		}	
         stage('Run container'){
 			steps {

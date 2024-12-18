@@ -17,12 +17,12 @@ git branch: 'main', credentialsId: 'dev-doc-git', url: 'https://github.com/RajaB
 
 
 		
-		// stage('Install node dependencies'){
-		// 	steps {
-		// 		powershell 'npm install'
+		stage('Install node dependencies'){
+			steps {
+				powershell 'npm install'
 
-		// 		}
-		// }
+				}
+		}
 		// stage('Test Code'){
 		// 	steps {
 		// 		 powershell ' npm test '
